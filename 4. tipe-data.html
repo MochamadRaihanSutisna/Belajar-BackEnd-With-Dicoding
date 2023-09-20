@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data JavaScript</title>
+</head>
+
+<body>
+
+    <!--
+
+        Tipe Data -> Tipe data merupakan pengklasifikasian data berdasarkan jenisnya. Pada JavaScript terdapat beberapa tipe data sebagai berikut:
+
+            - Undefined -> Tipe data ini terbentuk ketika sebuah variabel tidak memiliki nilai. Artinya, ketika kita  mendeklarasikan variabel tanpa menginisialisasikan nilainya, variabel tersebut menjadi undefined.
+
+
+            - Number 
+                JavaScript hanya mendukung satu tipe data number, dimana tipe data number di JavaScript bisa berupa bilangan bulat atau bilangan desimal
+
+                Tipe seperti di bahasa pemrograman lain yang biasanya membedakan tipe data number bilangan bulat dan bilangan desimal, di JavaScript semuanya disatukan
+
+                .. Tipe Number tidak perlu menggunakan titik2 .. 
+
+                -- JavaScript mendukung number notation, default ada basis 10, JavaScript juga mendukung binary, hexadecimal dan octal
+                (
+                    .. Hexadecimal : 0xFF
+                    .. Binary : 0b10101
+                    .. Octal : 0o10
+            
+
+            - Bigint
+                Pada JavaScript, tipe data “Number” hanya mencakup nilai dari -(253 - 1) hingga (253 - 1). Untuk kebutuhan umum, sebenarnya nilai tersebut sudah sangat cukup. Namun, akan ada kebutuhan tertentu di mana kita membutuhkan cakupan nilai yang lebih besar, seperti untuk kriptografi atau menentukan waktu hingga presisi microsecond.
+
+                Untuk nilai di luar Number, kita bisa menggunakan tipe BigInt. Untuk membedakan tipe BigInt dan Number, tambahkan karakter (n) di akhir angka. 
+
+
+            - Tipe Data String
+                Tipe Data string yang merupakan sebuah teks. Untuk menetapkan nilai sebagai string pada variabel gunakan tanda petik satu (‘) atau petik dua (“) di antara teksnya.
+
+
+            - Tipe Data Boolean
+                Boolean hanya memiliki dua nilai, yaitu true atau false. Tipe data ini menjadi kunci utama dalam penentuan logika. Kita akan banyak menggunakannya nanti dalam materi if/else statement. Untuk menetapkan nilai boolean pada variabel.
+
+
+            - Null
+                Tipe berikutnya adalah null. Serupa dengan undefined, namun null perlu diinisialisasikan pada variabel. Null biasa digunakan sebagai nilai sementara pada variabel, tapi sebenarnya nilai tersebut “tidak ada”.
+
+                Terkadang kita perlu membuat sebuah variabel, namun kita belum memerlukan nilai apa-apa dan tidak ingin terikat oleh tipe data apa pun. Nah, daripada kita tidak menetapkan nilai apa pun (variabel akan undefined) sebaiknya kita beri nilai null pada variabel tersebut dan ubah nanti ketika kita membutuhkannya.
+
+
+            - Symbol
+                Symbol adalah tipe data baru yang dikenalkan pada ES6. Tipe data Symbol digunakan untuk menunjukkan identifier yang unik. Ketika membuat Symbol.
+    -->
+
+
+    <script>
+        //1. Undefined
+        let x;
+        console.log(typeof(x)); // output: undefined
+
+
+
+        // 2 Tipe data number
+        /*
+        Operator Matematika
+
+        >> JavaScript mendukung banyak sekali operator Matematika untuk tipe data Number, seperti :
+            .. Operator Aritmatika
+            .. Operator Augmented Assigments
+            .. Operator Unary
+            .. Dan Lain-lain
+
+        Operator Aritmatika
+            + | Pertambahan
+            - | Pengurangan
+            * | Perkalian
+            **| Exponsial
+            / | Pembagian
+            % | Sisa Bagi
+
+            Pada operator aritmatika juga terdapat operator increment (++) dan decrement (--). Operator increment dan decrement digunakan untuk menambahkan atau mengurangi nilai 1 pada nilai variabel yang ada sekarang.
+
+            Operator ini dapat dituliskan sebelum atau sesudah variabel, tetapi hal tersebut bukan berarti sama. Berikut ketentuannya:
+
+            * Jika dituliskan setelah variabel (x++), expression akan menghasilkan nilai variabel sebelum ditingkatkan nilainya.
+
+            * Jika dituliskan sebelum variabel (++x), expression akan menghasilkan nilai variabel setelah ditingkatkan nilainya.
+        */
+        let a = 12;
+        let b = 9;
+
+        console.log(a + b) //21
+        console.log(a - b) //3
+        console.log(a * b) //108
+        console.log(a / b) //1.333333333333333333
+        console.log(a % b) //3
+
+        console.log("</br>")
+
+        /* Increment dan Decrement */
+        let postfix = 5;
+        console.log(postfix++); /* output: 5 */
+        console.log(postfix); /* output: 6 */
+
+        let prefix = 5;
+        console.log(++prefix); /* output: 6 */
+
+
+
+        // 3. BigInt -> Contohnya adalah seperti kode di bawah ini. Bandingkan dengan yang bertipe Number.
+
+        //const bigNumber = 12345678910111213141516171819202122232425n;
+        const myInt = 1234567890123456789012345678901234567890;
+
+        //console.log(bigNumber); //Output ->  1234567890123456789012345678901234567890n 
+        console.log(myInt); //Output -> 1.2345678901234568e+39
+
+        /*
+        console.log(5n + 2n);
+        console.log(5n - 2n);
+        console.log(5n * 2n);
+        console.log(5n / 2n);
+        console.log(5n % 2n);
+        */
+
+
+
+        /* 4 Tipe Data String
+                >> ESCAPE SEQUANCE <<
+                    -- JavaScript mendukung escape sequance di string. Escape Sequance  merupakan karakter khusus, seperti mendukung ENTER, TAB, ""(KUTIP DUA),dan lain-lain --
+                    .... contoh escep sequance yang didukung oleh javascript di data string ....
+                        \n  |  ENTER
+                        \t  |  TAB
+                        \'  |  '
+                        \"  |  "
+                        \\  |  \
+            */
+        let greet = "Hello";
+        console.log(greet);
+
+        document.writeln("<textarea cols='100' rows='10'>");
+        document.write("Mochamad \nRaihan \nSutisna\n");
+        document.write("\\Home\\Raihan");
+        document.write("\"FullStack Develover\"\n");
+        document.write("\t\'Belajar JavaScript\'");
+        document.writeln("</textarea>");
+
+
+        // Pada String, kita juga dapat menggunakan operator plus (+). Operator tersebut berfungsi untuk menggabungkan dua teks yang terpisah menjadi satu buah teks.
+        let greetOne = "Hello";
+        let moreGreet = greetOne + greetOne;
+
+        console.log(moreGreet);
+        /* Ingat, STRING CONCATENATION seperti di atas akan menggabungkan string apa adanya, sehingga jika Anda ingin menggabungkan dua kata atau lebih perlu menambahkan spasi sendiri.
+
+        Selain concatenation, string pada JavaScript juga mendukung STRING INTERPOLATION. Sederhananya, kita bisa memasukkan variabel ke dalam sebuah string template yang menggunakan Backtick (``). Contohnya adalah seperti berikut: */
+
+        const myName = "Luke";
+        console.log(`Hello, my name is ${myName}.`);
+
+
+
+        // 5. Tipe Data Boolean
+        let isGreater = a > b;
+        let isLess = a < b;
+
+        console.log(isGreater);
+        console.log(isLess);
+
+
+
+        //6. Null -> Untuk menetapkan null pada variabel, kita dapat gunakan keyword null ketika variabel tersebut diinisialisasi.
+        let someLaterData = null;
+        console.log(someLaterData);
+
+        //7. Symbol -> kita bisa memberikan deskripsi atau nama symbol seperti ini:
+        const id1 = Symbol("id");
+        const id2 = Symbol("id");
+
+        console.log(id1 == id2);
+
+        //Symbol ini umumnya digunakan sebagai nama property dari Object. Object sendiri merupakan tipe data kompleks untuk menyimpan berbagai struktur data.
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Pada JavaScript</title>
+</head>
+
+<body>
+
+    <!--
+
+        Operator 
+            Operator dalam bahasa pemrograman sendiri adalah simbol yang memberi tahu interpreter untuk melakukan operasi seperti matematika, relasional, atau logika untuk memberikan hasil tertentu.
+
+
+
+        Assignment Operator
+            Dari contoh kode yang kita gunakan sebelumnya, sebenarnya kita sudah menggunakan assignment operator. Operator ini digunakan untuk memberikan nilai pada variabel.
+
+            Pada dasarnya operator ini adalah tanda sama dengan (=), di mana tanda ini digunakan untuk menginisialisasi nilai pada variabel. Tempatkan variabel yang ingin diberi nilai di sebelah kiri, sementara nilainya di sebelah kanan. Di antara keduanya terdapat operator assignment.
+
+        
+
+        Comparasion Operator
+            kita akan belajar mengenai operator komparasi sebagai logika dasar dalam membandingkan nilai pada JavaScript.
+
+            Terdapat serangkaian karakter khusus yang disebut dengan operator pembanding/komparasi yang dapat mengevaluasi dan membandingkan dua nilai.
+
+        
+        Logical Operator
+            Terdapat beberapa operator lain yang dapat kita gunakan untuk menetapkan logika yang lebih kompleks, yakni dengan logical operators. Dengan logical operator, kita dapat menggunakan kombinasi dari dua nilai boolean atau bahkan lebih dalam menetapkan logika.
+
+            Pada JavaScript terdapat tiga buah karakter khusus yang berfungsi sebagai logical operator. 
+    -->
+
+    <script>
+        //Assignment Operator
+        let x = 10;
+        let y = 5
+
+        // x += y;  artinya -> x = x + y;
+        // x -= y;  artinya -> x = x - y;
+        // x *= y;  artinya -> x = x * y;
+        // x /= y;  artinya -> x = x / y;
+        // x %= y;  artinya -> x = x % y;
+
+        x -= y;
+        console.log(x);
+
+
+        /* Comparasion Operator
+        
+        >> Operasi Perbandingan adalah operasi untuk membandingkan dua buah data
+        >> Operasi Perbandingan adalah operasi yang menghasilkan nilai boolean (Benar atau Salah)
+        >> Jika hasil operasinya adalah benar, maka nilainya adalah TRUE
+        >> Jika hasil operasinya adalah salah, maka nilainya adalah FALSE
+
+
+        Berikut Operator Perbandingan yang didukung oleh JavaScript :
+            >   | LEBIH DARI
+            <   | KURANG DARI
+            >=  | LEBIH DARI SAMA DENGAN
+            <=  | KURANG DARI SAMA DENGAN 
+            ==  | SAMA DENGAN
+            === | SAMA DENGAN DAN SAMA TIPE
+            !=  | TIDAK SAMA DENGAN
+            !== | TIDAK SAMA DENGAN ATAU TIDAK SAMA TIPE
+        */
+
+        let c = 10;
+        let d = 12;
+
+        console.log(c < d);
+        console.log(c > d);
+
+        /*Dalam operator komparasi di JavaScript, hal yang menjadi sedikit “tricky” adalah membedakan antara “sama” (==) dan “identik” (===).
+
+        Kita sudah mengetahui bahwa setiap nilai pasti memiliki tipe data baik itu number, string atau boolean. Contohnya sebuah string “10” dan number 10 merupakan hal yang serupa, tetapi keduanya tidak benar-benar sama.
+
+        Hal inilah yang membedakan antara sama dan identik pada JavaScript. Jika kita ingin membandingkan hanya dari kesamaan nilainya kita bisa gunakan == tapi jika kita ingin membandingkan dengan memperhatikan tipe datanya kita gunakan ===.*/
+
+        const aString = '10';
+        const aNumber = 10
+
+        console.log(aString == aNumber) // true, karena nilainya sama-sama 10
+        console.log(aString === aNumber) // false, karena walaupun nilainya sama, tetapi tipe datanya berbeda
+
+
+        //Logical Operator di Boolean
+        /*
+        >> OPERATOR LOGIKA 
+            - Opertor Logika adalah operator untuk dua buah data boolean
+            - Hasil dari operator logika adalah boolean lagi
+
+        -- Berikut Operator logika yang di rekomendasikan oleh Javascript
+            && artinya Dan
+            || artinya Atau
+            ! artinya Kebalikan
+
+                >>> Operator && (Dan)
+                        True  && True hasilnya TRUE
+                        True  && False hasilnya FALSE
+                        False && True hasilnya FALSE
+                        False && False hasilnya FALSE
+
+                >>> Operator || (Atau)
+                        True  || True hasilnya TRUE
+                        True  || False hasilnya TRUE
+                        False || True hasilnya TRUE
+                        False || False hasilnya false
+                        
+                >>> Operator Unary ! (Kebalikan) "hanya menggunakan 1 data"
+                        ! True  hasilnya FALSE
+                        ! False hasilnya TRUE
+            */
+
+        let a = 10;
+        let b = 12;
+
+        /* AND operator */
+        console.log(a < 15 && b > 10); // (true && true) -> true
+        console.log(a > 15 && b > 10); // (false && true) -> false
+
+        /* OR operator */
+        console.log(a < 15 || b > 10); // (true || true) -> true
+        console.log(a > 15 || b > 10); // (false || true) -> true
+
+        /* NOT operator */
+        console.log(!(a < 15)); // !(true) -> false
+        console.log(!(a < 15 && b > 10)); // !(true && true) -> !(true) -> false
+
+        //Logical Operator di Non Boolean
+        /*
+        Operator Logika di Non Boolean
+        > Sebelumnya kita sudah tahu bahwa operator logika AND(&&) dan OR(||) digunakan untuk dua data boolean
+        > Namun berbeda di JavaScript, kita bisa menggunakan operator logika AND dan Or untuk tipe data non boolean
+
+
+        Operator OR(||) di Non Boolean
+        >Operator OR (||), membaca dari kiri ke kanan.
+        >Operator ini akan mengambil nilai pertama yang truthy
+        >Jika tidak ada satupun yang bernilai truthy, maka yang terakhir yang akan di ambil
+        */
+
+        console.info("Hello" || "");
+        console.info("" || []);
+        console.info("0" || "NOL");
+        console.info(0 || "Nol");
+        console.info(null || "NulL");
+        console.info(undefined || "UndefineD");
+        console.info(0 || false);
+
+
+        const person = {
+            firstName: "",
+            MiddleName: "Sutisna"
+        };
+
+        const name = person.firstName || person.MiddleName;
+        console.info(name);
+
+        /*
+        Operator AND (&&) di Non Boolean
+        > Operator logika AND (||), membaca dari kiri ke kanan.
+        > Operator ini akan mengambil nilai pertama yang falsy
+        > Jika tidak ada satupun yang bernilai falsy, maka yang terakhir yang akan di ambil
+        */
+
+        console.info("hello" && '');
+        console.info("" && []);
+        console.info("0" && "NOL");
+        console.info(0 && "NOL");
+        console.info(null && "NULL");
+        console.info(undefined && "UNDEFINED");
+        console.info("undefined" && "null");
+    </script>
+
+
+</body>
+
+</html>

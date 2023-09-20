@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else Statement pada Javascript</title>
+</head>
+
+<body>
+
+    <!--
+
+        If Expression
+        Else Expression
+        Else If Expression
+
+        Ternary Operator
+
+    -->
+
+
+    <script>
+        /*
+                                                                If Expression
+                                                                > Dalam JvaScript, if adalah salah satu kata kunci yang digunakan untuk percabangan
+                                                                > Percabangan artinya kita bisa mengeksekusi kode program tertentu ketika suatu kondisi terpenuhi 
+                                                                > Hampir disemua bahasa pemrograman mendukunf if expression
+                                                                */
+
+        const examValue1 = 90;
+
+        if (examValue1 > 80) {
+            document.writeln("<p>Good Job</p>");
+        }
+        document.writeln("<hr>")
+
+        //Akhir Expression
+
+        /*
+        Else Expression
+        > Blok if akan dieksekusi ketika kondisi if bernilai true
+        > Kadang kita ingin melakukan eksekusi program tertentu jika kondisi if  bernilai false
+        > Hal ini bisa dilakukan menggunkan else expression 
+        */
+        const examValue = 70;
+
+        if (examValue > 80) {
+            document.writeln("<p>Nilai Bagus</p>");
+        } else {
+            document.writeln("<p>Mencoba Lagi</p>");
+        }
+        document.writeln("<hr>");
+
+        //Akhir Else Expression
+
+        /*
+        Else If Expression
+        > Kadang dalam if kita butuh membuat beberapa kondisi
+        > Kasus seperti ini, di JavaSript kita bisa menggunakan Else If Expression
+        */
+
+        const Penilaian = 67;
+        if (Penilaian > 80) {
+            document.writeln("<p> Sangat Sempurna</p>");
+        } else if (Penilaian > 75) {
+            document.writeln("<p> Biasa Saja </p>");
+        } else if (Penilaian > 65) {
+            document.writeln("<p> Jangan Patah Semangat </p>");
+        } else {
+            document.writeln("<p>Jangan Pernah Jadi Pecundang</p>");
+        }
+
+
+
+        // Ternary Opeartor / Conditional Expression
+        /* 
+        Ternary Operator
+            > Ternary Operator (?) adalah operator sederhana dari if statement
+            > Ternary Operator terdiri dari kondisi yang dievaluasi, jika menghasilkan true maka nilai pertama diambil, jika false, maka nilai kedua diambil
+        */
+
+        // Tanpa Ternary Operator
+        const nilai = 75;
+        let ucapan;
+
+        if (nilai >= 75) {
+            ucapan = "Selamat Anda Lulus";
+        } else {
+            ucapan = "Silahkan Coba Lagi";
+        }
+
+        document.writeln(`<p>${ucapan}</p>`)
+
+        //Dengan Ternary Operator
+        ucapan = nilai >= 75 ? "Selamat Anda Lulus" : "Silahkan Coba Lagi";
+        document.writeln(`<p>${ucapan}</p>`)
+    </script>
+
+</body>
+
+</html>

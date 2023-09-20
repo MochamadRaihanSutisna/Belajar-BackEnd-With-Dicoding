@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable JavaScript</title>
+</head>
+
+<body>
+
+
+
+    <!--
+
+        Comment 
+            - Comment untuk satu baris (//)
+            - Comment untuk lebih dari satu baris (/**/)
+
+        
+        Variable
+            Ketika menulis sebuah program, kita memberi tahu komputer cara memproses informasi seperti mencetak teks ke layar atau melakukan operasi perhitungan. Untuk lebih mudah dalam penggunaan dan pemanggilan data, kita bisa memanfaatkan variabel. Variabel umumnya digunakan untuk menyimpan informasi atau nilai yang akan dikelola dalam sebuah program.
+                Pada JavaScript setidaknya ada tiga cara untuk mendeklarasikan sebuah variabel, yaitu menggunakan keyword VAR, LET, dan CONST. Pada versi ECMAScript 2015 (ES6) dikenalkan deklarasi variabel dengan let dan const untuk menggantikan var yang dinilai kontroversial dan rawan menimbulkan bug.
+
+                Sebaiknya hindari penamaan variabel dengan istilah umum seperti “data”. Gunakanlah penamaan variabel yang dapat mendeskripsikan nilai dari variabel itu sendiri. Berikut beberapa aturan dalam penamaan variabel yang perlu Anda ketahui:
+
+                    Harus dimulai dengan huruf atau underscore (_).
+                    Dapat terdiri dari huruf, angka, dan underscore (_) dengan berbagai kombinasi.
+                    Tidak boleh mengandung spasi (whitespace). Jika penamaan variabel lebih dari dua kata, tuliskan secara camelCase. Contoh firstName, lastName, catName, dll.
+                    Tidak boleh mengandung karakter spesial (! . , / \ + * = dll.)
+
+    -->
+
+    <script>
+        //1. menulis comment satu baris
+
+        /*2. Menulis comment lebih dari satu baris  
+        
+            (<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto totam culpa excepturi, impedit ut error quisquam debitis ad eum quo modi sed quam cum laudantium assumenda? Sunt dolore accusantium doloremque sed architecto quae corrupti molestiae nam dolorum nemo suscipit reprehenderit possimus et provident necessitatibus minus sint eum, officia quod quibusdam!</p>) */
+
+        //3. Menulis Script menggunakan Variable "Let"
+
+        let namaDepan = "Mochamad ";
+        let namaBelakang = "Raihan Sutisna";
+
+        let namaKepanjangan = namaDepan + namaBelakang;
+        console.log(namaKepanjangan);
+
+        namaDepan = "Dewi Lillah"
+        console.log(namaDepan)
+            /*
+                Kode untuk menginisialisasikan nilai ke dalam sebuah variabel dengan tanda sama dengan (=) ini disebut dengan assignment expression.
+
+                Tunggu sebentar. Kita kembali bertemu dengan istilah statement dan expression. Karena expression pasti menghasilkan nilai, sehingga mereka bisa muncul di mana pun dalam program JavaScript. Sementara itu, statement merujuk pada aksi. Sehingga, pada bagian kode tertentu yang membutuhkan nilai tidak bisa kita isi dengan sebuah statement.
+                    let fullName =
+                    let lastName; // Error karena let lastName adalah sebuah statement untuk deklarasi variabel. Statement tidak bisa berada di posisi expression.
+                    
+                    let fullName = (lastName = "Skywalker"); // (lastName = "Skywalker") merupakan expression, sehingga kode ini tidak error.
+                    
+                    let fullName = "Luke" + "Skywalker"; // "Luke" + "Skywalker" juga merupakan expression, sehingga kode ini tidak error.
+            */
+
+        /*4. Menulis Script menggunakan Variable "Const"
+                Const merupakan kependekan dari constant. Artinya, kita akan mendeklarasikan sebuah variabel dengan const ketika ingin variabel bernilai konstan dan tidak bisa diubah setelah diinisialisasi nilainya.
+        */
+
+        const z = 100;
+        console.log(z);
+
+        z = 200;
+        console.log(z) // TypeError: Assignment to constant variable.
+    </script>
+
+</body>
+
+</html>
