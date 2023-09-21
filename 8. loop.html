@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+
+<body>
+
+    <!--
+        
+    For Loop
+        > For adalah salah satu kata kunci yang bisa digunakan untuk melakukan perulangan
+        > Blok kode yang terdapat di dalam for akan selalu diulangi selama kondisi for terpenuhi
+
+            Sintax Perulangan For
+
+                for(Init statement; Kondisi; Post statement){
+                    //blok perulangan
+                }
+
+                > Init statement akan dieksekusi hanya sekali di awal sebelum perulangan 
+                > Kondisi akan dilakukan pengecekan dalam setiap perulangan, jika true perulangan akan dilakukan, jika false perulangan akan berhenti 
+                > Post statement akan dieksekusi setiap kali diakhir perulangan
+                > Init statement, kondisi dan Post Statement tidak wajib diisi, jika Kondisi tidak di isi, berarti kondisi selalu bernilai true
+                
+                
+                
+    For In
+        > For In merupakan perulangan for yang digunakan untuk mengiterasi seluruh data property di object atau index di array
+
+        > Walaupun for in bisa digunakan untuk Array, namun tidak direkomendasikan untuk Array, karena biasanya kita jarang sekali butuh data index untuk Array, kita bisa menggunakan For Of (yang dibahas setelah ini)
+
+        
+    
+    *
+    For Of
+        > Jika For In digunakan untuk melakukan iterasi property atau index, berbeda dengan For Of, ini digunakan untuk melakukan literasi terhadap isi value dari iterable object, seperti Array, String dan Lain-lain
+        > For of tidak bisa digunakan untuk melakukan iterasi dat di object, karena object bukanlah iterable. 
+        
+        
+        
+    While and Do While 
+        While Loop
+            > While Loop adalah versi ulangan yang lebih sederhana dibanding For Loop
+            > Di While Loop, hanya terdapat kondisi perulangan, tanpa ada Init Statement dan Post Statement
+            
+        Do While Loop
+            > Do While Loop adalah perulangan yang mirip dengan while 
+            > Perbedaannya hanya pada pengecekan kondisi
+            > Pengecekan kondisi di While Loop dilakukan diawal sebelum perulangan dilakukan, sedangkan di Do While Loop dilakukan setelah perulangan dilakukan
+            > Oleh karena itu dalam Do While Loop, minimal pasti sekali perulangan dilakukan walaupun kondisi tidak bernilai true
+            
+            
+            
+    Infinite Loop
+        Ketika menerapkan perulangan pada program, ada satu kondisi yang perlu kita hindari yaitu infinite loop. Infinite loop atau endless loop adalah kondisi di mana program kita stucked di dalam perulangan. Ia akan berjalan terus hingga menyebabkan crash pada aplikasi dan komputer kecuali ada intervensi secara eksternal, seperti mematikan aplikasi. 
+    */    
+    -->
+
+    <script>
+        //1. For Loop
+        /*for (;;) {
+            alert("Hello Raihan")
+        }*/
+
+        let counter = 1;
+        for (; counter <= 4;) {
+            document.writeln(`<p>perulangan ke ${counter}</p>`)
+            counter++;
+        } // Langkah ke 1 
+
+        document.writeln("<hr>")
+
+        for (let counter = 1; counter <= 4;) {
+            document.writeln(`<p>Perulangan ke ${counter}</p>`);
+            counter++;
+        } //langkah ke 2
+
+        document.writeln("<hr>")
+
+        //>>>>>>>>>>>>>>>>>>>
+        for (let counter = 1; counter <= 4; counter++) {
+            document.writeln(`<p>Perulangan ke ${counter}</p>`)
+        } // Langkah ke 3
+
+        document.writeln("<hr>")
+
+
+
+        //2. For In Pada Object
+        const person = {
+            firstName: "Mochamad",
+            middleName: "Raihan",
+            lastName: "Sutisna"
+        }
+
+        for (const property in person) {
+            document.writeln(`<p> ${property} : ${person[property]}</p> `);
+        }
+
+        // For in Pada Array
+        const names = ["Mochamad", "Raihan", "Sutisna"]
+
+        for (const index in names) {
+            document.writeln(`<p> ${index} : ${names[index]} </p>`);
+        }
+
+
+
+        //3. For Of di Array 
+        const namaLengkap = ["Mochmad", "Raihan", "Sutisna"];
+        for (const nama of namaLengkap) {
+            document.writeln(`<p>${nama}</p>`)
+        }
+
+
+
+        //4. While
+        let latihan = 1
+        while (latihan <= 3) {
+            document.writeln(`<p>Perulangan ke ${latihan}</p>`);
+            latihan++;
+        }
+
+
+
+        //5. DoWhile
+        let latihanSatu = 1
+        do {
+            document.writeln(`<p>Perulangan ke ${latihanSatu}</p>`);
+            latihanSatu++
+        } while (latihanSatu <= 4);
+    </script>
+
+</body>
+
+</html>
